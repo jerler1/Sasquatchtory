@@ -5,15 +5,15 @@ const Schema = mongoose.Schema;
 const factorySchema = new Schema({
     name: {
         type: String,
-        required: true,
+        required: "Enter a name.",
     },
     minValue: {
         type: Number,
-        required: true,
+        required: "Enter a min value.",
     },
     maxValue: {
         type: Number,
-        required: true,
+        required: "Enter a max value.",
     },
     numbers: {
         type: Array,
