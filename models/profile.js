@@ -14,4 +14,8 @@ const profileSchema = new Schema({
             ref: "Factory"
         },
     ]
-})
+});
+
+const Profile = mongoose.model("Profile", profileSchema);
+
+module.exports = Profile;

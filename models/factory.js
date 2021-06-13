@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Profile = require("./profile");
 
 const Schema = mongoose.Schema;
 
@@ -17,6 +18,11 @@ const factorySchema = new Schema({
     },
     numbers: {
         type: Array,
+    },
+    profile: {
+        type: Schema.Types.ObjectId,
+        ref: Profile,
+        required: true,
     }
 });
 
