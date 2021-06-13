@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: local("Gilroy-Bold"), url(./assets/fonts/Gilroy-Bold.woff) format("woff");
+}
+@font-face {
+  font-family: "Gilroy-Heavy";
+  src: local("Gilroy-Heavy"),
+    url(./assets/fonts/Gilroy-Heavy.woff) format("woff");
+}
+@font-face {
+  font-family: "Gilroy-Light";
+  src: local("Gilroy-Light"),
+    url(./assets/fonts/Gilroy-Light.woff) format("woff");
+}
+
+h4 {
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 120%;
+}
+h5 {
+  font-family: "Gilroy-Heavy", sans-serif;
+  font-size: 18px;
+  line-height: 120%;
+}
+h6,
+button {
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 18px;
+  line-height: 120%;
+}
+body,
+p {
+  font-family: "Gilroy-Light";
+  font-size: 18px;
+  line-height: 125%;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+body,
+#root,
+#root > div,
+div[data-reactroot] {
+  height: 100%;
+  width: 100%;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
