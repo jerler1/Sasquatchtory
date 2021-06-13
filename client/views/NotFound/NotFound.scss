@@ -1,0 +1,6 @@
+@import "../../sass/mixins/mixins";
+
+.notFoundContainer {
+    @include dimensions(100vw, 70vh);
+    @include flex(row, center, center);
+}
