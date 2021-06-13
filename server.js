@@ -4,6 +4,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 
+const routes = require("./routes");
+
 const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ entended: true }));
@@ -24,6 +26,8 @@ mongoose
   .catch((err) => {
     console.log("Error connecting to MongoDB", err);
   });
+
+  app.use("/api", routes);
 
   if (process.env.PRODUCTION_URL) {
     app.get("*", (req, res) => {
