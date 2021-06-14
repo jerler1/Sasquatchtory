@@ -27,14 +27,32 @@ mongoose
     console.log("Error connecting to MongoDB", err);
   });
 
-  app.use("/api", routes);
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
 
-  if (process.env.PRODUCTION_URL) {
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(__dirname, "client/build/index.html"));
-    });
-  }
-
-  app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  app.options("*", (req, res) => {
+    // allowed XHR methods
+    res.header(
+      "Access-Control-Allow-Methods",
+      "GET, PATCH, PUT, POST, DELETE, OPTIONS"
+    );
+    res.send();
   });
+});
+
+app.use("/api", routes);
+
+if (process.env.PRODUCTION_URL) {
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+  });
+}
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
