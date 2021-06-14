@@ -1,11 +1,23 @@
 @import "../../sass/mixins";
 
 .navbarContainer {
-    @include dimensions(100%, 10%);
+    @include dimensions(100%, 100px);
     @include flex(row, space-between, flex-start);
+    background-color: white;
+    border-bottom: 1px black solid;
     .brand-logo {
         @include dimensions(20%, 100%);
         @include flex(row, flex-start, center);
         margin-left: 3%;
+    }
+    .nav-links {
+        @include dimensions(30%, 100%);
+        @include flex(row, center, center);
+        margin-right: 3%;
+        div {
+            .dropdown-trigger {
+                margin: 0 30px;
+            }
+        }
     }
 }
