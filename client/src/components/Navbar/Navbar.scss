@@ -1,0 +1,11 @@
+@import "../../sass/mixins";
+
+.navbarContainer {
+    @include dimensions(100%, 10%);
+    @include flex(row, space-between, flex-start);
+    .brand-logo {
+        @include dimensions(20%, 100%);
+        @include flex(row, flex-start, center);
+        margin-left: 3%;
+    }
+}
