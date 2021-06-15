@@ -1,0 +1,17 @@
+@import "../../sass/mixins";
+
+.homeContainer {
+    @include dimensions(100%, 100%);
+    @include flex(row, space-between, center);
+    .rootNode {
+        @include dimensions(33%, 400px);
+        background-color: red;
+    }
+    .factories {
+        @include dimensions(33%, 100%);
+        background-color: azure;
+    }
+    .generatedNumbers {
+        @include dimensions(33%, 100%);
+    }
+}

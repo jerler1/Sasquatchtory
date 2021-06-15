@@ -3,8 +3,10 @@ import "./Home.scss";
 
 const Home = () => {
     return (
-        <div>
-            
+        <div className="homeContainer">
+            <section className="rootNode">Root</section>
+            <section className="factories">Factory</section>
+            <section className="generatedNumbers"></section>            
         </div>
     );
 };
