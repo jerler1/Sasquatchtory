@@ -48,7 +48,7 @@ const Navbar = () => {
           <div className="dropdown-menu">
             {listOfProfiles.map((profile) => {
               return (
-                <DropdownList props={profile} key={profile._id} handleClick={handleClick} />
+                <DropdownList profile={profile} key={profile._id} handleClick={handleClick} />
               );
             })}
           </div>

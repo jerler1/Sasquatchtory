@@ -1,15 +1,10 @@
 import React from "react";
 
-const DropdownList = (profile) => {
-  const { name, factory, _id } = profile.props;
-
-  const handleClick = (event, name) => {
-    console.log("Hi");
-    console.log(name);
-  }
+const DropdownList = (props) => {
+  const { name, factory, _id } = props.profile;
 
   return (
-    <div className="dropdown-content" onClick={handleClick}>
+    <div className="dropdown-content" onClick={props.handleClick}>
       <p>{name}</p>
     </div>
   );

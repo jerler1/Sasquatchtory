@@ -1,0 +1,6 @@
+@import "../../sass/mixins";
+
+.factoryContainer {
+    @include dimensions(90%, 300px);
+    @include flex(column, center, center);
+}
