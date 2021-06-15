@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import DropdownList from "../DropdownList/DropdownList";
 import api from "../../api/index";
 
 const Navbar = () => {
@@ -11,6 +12,11 @@ const Navbar = () => {
   useEffect(() => {
     api.getProfiles().then((res) => setListOfProfiles(res.data));
   }, []);
+
+  const handleClick = (event) => {
+    console.log("Hi");
+    console.log(event);
+  }
 
   return (
     <nav className="navbarContainer">
@@ -32,19 +38,17 @@ const Navbar = () => {
               onClick={() => setIsDropdownActive(!isDropdownActive)}
             >
               <span>
-                <p>Choose Profile</p>
+                <p>{activeProfile ? activeProfile : "Choose Profile"}</p>
               </span>
-              <span className="icon is-small">
-                <i className="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
+              {/* <span className="icon is-small">
+                <i class="fas fa-chevron-down"></i>
+              </span> */}
             </button>
           </div>
           <div className="dropdown-menu">
             {listOfProfiles.map((profile) => {
               return (
-                <div className="dropdown-content">
-                  <p>{profile.name}</p>
-                </div>
+                <DropdownList props={profile} key={profile._id} handleClick={handleClick} />
               );
             })}
           </div>
