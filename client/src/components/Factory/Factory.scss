@@ -3,4 +3,11 @@
 .factoryContainer {
     @include dimensions(90%, 300px);
     @include flex(column, center, center);
+    .factoryName {
+        @include dimensions(100%, 40px);
+        @include flex(column, center, center);
+    }
+    .factoryMinMax {
+        
+    }
 }

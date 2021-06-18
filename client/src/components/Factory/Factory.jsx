@@ -6,6 +6,7 @@ const Factory = () => {
         <section className="factoryContainer">
             <div className="factoryName">
                 {/* adjustable name */}
+                <h3>Name</h3>
             </div>
             <div className="factoryMinMax">
                 {/* min and max drop down menu's */}

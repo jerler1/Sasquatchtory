@@ -40,9 +40,6 @@ const Navbar = () => {
               <span>
                 <p>{activeProfile ? activeProfile : "Choose Profile"}</p>
               </span>
-              {/* <span className="icon is-small">
-                <i class="fas fa-chevron-down"></i>
-              </span> */}
             </button>
           </div>
           <div className="dropdown-menu">
