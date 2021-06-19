@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
 const DropdownMenu = (props) => {
 
-  const [isDropdownActive, setIsDropdownActive] = useState(false);
-
   return (
-      <div className={isDropdownActive ? "dropdown is-active" : "dropdown"}>
+      <div className={props.value ? "dropdown is-active" : "dropdown"}>
         <div className="dropdown-trigger">
           <button
             className="button"
             aria-haspopup="true"
             aria-controls="dropdown-menu2"
-            onClick={() => setIsDropdownActive(!isDropdownActive)}
+            onClick={props.handleDropDownClick}
           >
             <span>
               <p>{props.activeProfile.name ? props.activeProfile.name : "Choose Profile"}</p>
