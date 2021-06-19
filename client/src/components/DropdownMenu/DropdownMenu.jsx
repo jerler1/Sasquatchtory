@@ -14,7 +14,7 @@ const DropdownMenu = (props) => {
             onClick={() => setIsDropdownActive(!isDropdownActive)}
           >
             <span>
-              <p>{props.activeProfile ? props.activeProfile : "Choose Profile"}</p>
+              <p>{props.activeProfile.name ? props.activeProfile.name : "Choose Profile"}</p>
             </span>
           </button>
         </div>
