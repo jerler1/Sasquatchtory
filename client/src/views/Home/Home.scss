@@ -2,10 +2,47 @@
 
 .homeContainer {
     @include dimensions(100%, 100%);
-    @include flex(row, space-between, center);
+    @include flex(column, space-between, center);
     .rootNode {
-        @include dimensions(33%, 400px);
+        @include dimensions(66%, 150px);
+        @include flex(column, center, center);
         background-color: red;
+        border-radius: 35px;
+        margin-top: 2%;
+        .rootText {
+            @include dimensions(100%, 100%);
+            @include flex(row, center, center);
+            h1 {
+                font-size: 45px;
+                font-weight: 600;
+                color: white;
+                letter-spacing: 3.5px;
+            }
+        }
+        .rootFactoryGeneration {
+            @include dimensions(100%, 100%);
+            @include flex(row, center, center);
+            h3 {
+                @include dimensions(100%, 100%);
+                @include flex(row, center, center);
+                font-size: 24px;
+                color: white;
+                letter-spacing: 2.5px;
+                span {
+                    margin: 0% 2%;
+                    form {
+                        @include flex(row, center, center);
+                        height: 100%;
+                        input {
+                            height: 100%;
+                        }
+                        .buttonWrapper {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
     }
     .factories {
         @include dimensions(33%, 100%);
