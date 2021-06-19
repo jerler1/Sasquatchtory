@@ -2,21 +2,40 @@ import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import DropdownList from "../DropdownList/DropdownList";
+import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import api from "../../api/index";
 
 const Navbar = () => {
-  const [activeProfile, setActiveProfile] = useState(null);
-  const [isDropdownActive, setIsDropdownActive] = useState(false);
+  const [activeProfile, setActiveProfile] = useState({});
+  // TODO: when a profile is made to add to listOfProfiles.
   const [listOfProfiles, setListOfProfiles] = useState([]);
+  const [isProfileDropdownActive, setIsProfileDropdownActive] = useState(false);
+  const [isNewProfileDropdownActive, setIsNewProfileDropdownActive] =
+    useState(false);
 
   useEffect(() => {
-    api.getProfiles().then((res) => setListOfProfiles(res.data));
+    getListOfProfiles();
   }, []);
 
-  const handleClick = (event) => {
-    console.log("Hi");
-    console.log(event);
-  }
+  const getListOfProfiles = () =>
+    api.getProfiles().then((res) => setListOfProfiles(res.data));
+
+  const handleProfileDropDownClick = () =>
+    setIsProfileDropdownActive(!isProfileDropdownActive);
+
+  const handleNewProfileDropdownClick = () =>
+    setIsNewProfileDropdownActive(!isNewProfileDropdownActive);
+
+  const handleDropdownListClick = (event) => {
+    const choosenProfile = event.target.innerHTML;
+    for (let i = 0; i < listOfProfiles.length; i++) {
+      if (listOfProfiles[i].name === choosenProfile) {
+        setActiveProfile(listOfProfiles[i]);
+        break;
+      }
+    }
+    setIsProfileDropdownActive(false);
+  };
 
   return (
     <nav className="navbarContainer">
@@ -26,30 +45,38 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="nav-links">
-        <button className="newProfileButton button">
-          <p>New Profile</p>
-        </button>
-        <div className={isDropdownActive ? "dropdown is-active" : "dropdown"}>
-          <div className="dropdown-trigger">
-            <button
-              className="button"
-              aria-haspopup="true"
-              aria-controls="dropdown-menu2"
-              onClick={() => setIsDropdownActive(!isDropdownActive)}
-            >
-              <span>
-                <p>{activeProfile ? activeProfile : "Choose Profile"}</p>
-              </span>
-            </button>
+        <DropdownMenu
+          buttonDisplay={<p>New Profile</p>}
+          handleDropDownClick={handleNewProfileDropdownClick}
+          value={isNewProfileDropdownActive}
+        >
+          {/* form goes here to add a new profile */}
+          <div className="dropdown-content">
+            <p>Should be displaying.</p>
           </div>
-          <div className="dropdown-menu">
-            {listOfProfiles.map((profile) => {
-              return (
-                <DropdownList profile={profile} key={profile._id} handleClick={handleClick} />
-              );
-            })}
-          </div>
-        </div>
+        </DropdownMenu>
+        <DropdownMenu
+          activeProfile={activeProfile}
+          value={isProfileDropdownActive}
+          handleDropDownClick={handleProfileDropDownClick}
+          buttonDisplay={
+            <p>
+              {activeProfile.name
+                ? "Active profile: " + activeProfile.name
+                : "Choose Profile"}
+            </p>
+          }
+        >
+          {listOfProfiles.map((profile) => {
+            return (
+              <DropdownList
+                profile={profile}
+                key={profile._id}
+                handleClick={handleDropdownListClick}
+              />
+            );
+          })}
+        </DropdownMenu>
       </div>
     </nav>
   );
