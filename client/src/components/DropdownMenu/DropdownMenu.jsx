@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
-const DropdownMenu = () => {
+const DropdownMenu = (props) => {
+
+  const [isDropdownActive, setIsDropdownActive] = useState(false);
+
   return (
-    <>
-      <button className="newProfileButton button">
-        <p>New Profile</p>
-      </button>
       <div className={isDropdownActive ? "dropdown is-active" : "dropdown"}>
         <div className="dropdown-trigger">
           <button
@@ -15,13 +14,12 @@ const DropdownMenu = () => {
             onClick={() => setIsDropdownActive(!isDropdownActive)}
           >
             <span>
-              <p>{activeProfile ? activeProfile : "Choose Profile"}</p>
+              <p>{props.activeProfile ? props.activeProfile : "Choose Profile"}</p>
             </span>
           </button>
         </div>
         <div className="dropdown-menu">{props.children}</div>
       </div>
-    </>
   );
 };
 
