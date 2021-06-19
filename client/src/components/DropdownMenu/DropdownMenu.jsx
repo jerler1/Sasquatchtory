@@ -12,7 +12,7 @@ const DropdownMenu = (props) => {
             onClick={props.handleDropDownClick}
           >
             <span>
-              <p>{props.activeProfile.name ? "Active profile: " + props.activeProfile.name : "Choose Profile"}</p>
+              {props.buttonDisplay}
             </span>
           </button>
         </div>
