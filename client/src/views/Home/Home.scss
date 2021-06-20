@@ -6,7 +6,7 @@
     .rootNode {
         @include dimensions(66%, 150px);
         @include flex(column, center, center);
-        background-color: red;
+        background-color: #861657;
         border-radius: 35px;
         margin-top: 2%;
         .rootText {
@@ -46,7 +46,6 @@
     }
     .factoriesContainer {
         @include dimensions(66%, auto);
-        background-color: #D3D3D3;
         margin: 2% 2%;
         border-radius: 35px;
         .factoriesGrid {
