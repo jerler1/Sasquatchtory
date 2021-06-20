@@ -6,7 +6,7 @@ const DropdownList = (props) => {
   const { name } = props.profile;
 
   return (
-    <div className="dropdown-content" onClick={props.handleClick} data-profile={props.profile ? props.profile : ""}>
+    <div className="dropdown-content" onClick={props.handleClick}>
       <p>{name}</p>
     </div>
   );
