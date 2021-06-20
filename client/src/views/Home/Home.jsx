@@ -3,6 +3,7 @@ import api from "../../api/index";
 import "./Home.scss";
 import { useForm } from "react-hook-form";
 import ProfileContext from "../../Context/ProfileContext";
+import Factory from "../../components/Factory/Factory";
 
 const Home = () => {
   const { profile, setProfile } = useContext(ProfileContext);
@@ -71,11 +72,18 @@ const Home = () => {
           </div>
         ) : (
           <div className="rootFactoryGeneration">
-            <h3>Please make a new profile.</h3>
+            <h3>Please make/choose a profile.</h3>
           </div>
         )}
       </section>
-      <section className="factories">Factory</section>
+      <section className="factoriesContainer">
+        <div className="factoriesGrid">
+          <Factory />
+          <Factory />
+          <Factory />
+          <Factory />
+        </div>
+      </section>
       <section className="generatedNumbers"></section>
     </div>
   );

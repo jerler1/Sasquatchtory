@@ -44,9 +44,18 @@
             }
         }
     }
-    .factories {
-        @include dimensions(33%, 100%);
-        background-color: azure;
+    .factoriesContainer {
+        @include dimensions(66%, auto);
+        background-color: #D3D3D3;
+        margin: 2% 2%;
+        border-radius: 35px;
+        .factoriesGrid {
+            @include dimensions(100%, auto);
+            @include flex(row, center, center);
+            padding: 2% 2% 2% 2%;
+            flex-wrap: wrap;
+            border-radius: 35px;
+        }
     }
     .generatedNumbers {
         @include dimensions(33%, 100%);
