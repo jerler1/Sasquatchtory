@@ -1,13 +1,52 @@
 @import "../../sass/mixins";
 
 .factoryContainer {
-    @include dimensions(90%, 300px);
+  @include dimensions(50%, auto);
+  @include flex(column, center, center);
+  h4 {
+    font-family: "Gilroy-Light";
+    font-size: 18px;
+    margin: 10px 0px;
+  }
+  h3 {
+    font-family: "Gilroy-Bold";
+    font-size: larger;
+  }
+  hr {
+    border: 1px solid #333;
+    width: 80%;
+    margin: 10px 0px;
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #d56aa0, #333, #d56aa0);
+  }
+  .factoryWrapper {
+    @include dimensions(90%, auto);
     @include flex(column, center, center);
-    .factoryName {
-        @include dimensions(100%, 40px);
-        @include flex(column, center, center);
+    background-color: #fcf0cc;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    margin: 2% 2%;
+    // border: 1px black solid;
+  }
+  .factoryName {
+    @include dimensions(100%, auto);
+    @include flex(column, center, center);
+    color: black;
+    background-color: #d56aa0;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+  .factoryMinMax {
+    @include dimensions(100%, auto);
+    @include flex(row, center, center);
+    .minContainer,
+    .maxContainer {
+      @include dimensions(50%, auto);
+      @include flex(column, center, center);
+      .header {
+      }
     }
-    // .factoryMinMax {
-        
-    // }
+  }
 }

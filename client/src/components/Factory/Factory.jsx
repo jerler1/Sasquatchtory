@@ -1,22 +1,34 @@
-import React from 'react';
+import React from "react";
 import "./Factory.scss";
 
 const Factory = () => {
-    return (
-        <section className="factoryContainer">
-            <div className="factoryName">
-                {/* adjustable name */}
-                <h3>Name</h3>
+  return (
+    <section className="factoryContainer">
+      <div className="factoryWrapper">
+        <div className="factoryName">
+          <h4>Factory Name</h4>
+          <h3>Fred</h3>
+          <hr />
+        </div>
+        <div className="factoryMinMax">
+          <div className="minContainer">
+            <div className="header">
+              <h4>Minimum Number</h4>
             </div>
-            <div className="factoryMinMax">
-                {/* min and max drop down menu's */}
+          </div>
+          <div className="maxContainer">
+            <div className="header">
+              <h4>Maximum Number</h4>
             </div>
-            <div className="factoryFooter">
-                {/* amount of numbers to generate */}
-                {/* generate numbers button */}
-            </div>
-        </section>
-    );
+          </div>
+        </div>
+        <div className="factoryFooter">
+          {/* amount of numbers to generate */}
+          {/* generate numbers button */}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Factory;
