@@ -14,4 +14,6 @@ router
     .put(profileController.update)
     .delete(profileController.remove);
 
+router.route("/:id/clear").put(profileController.clearFactories)
+
 module.exports = router;

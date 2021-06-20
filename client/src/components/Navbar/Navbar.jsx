@@ -7,7 +7,6 @@ import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import api from "../../api/index";
 
 const Navbar = () => {
-  const [activeProfile, setActiveProfile] = useState({});
   // TODO: when a profile is made to add to listOfProfiles.
   const [listOfProfiles, setListOfProfiles] = useState([]);
   const {profile, setProfile} = useContext(ProfileContext);
