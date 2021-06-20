@@ -1,4 +1,5 @@
 import React from "react";
+import api from "../../api/index";
 import "./Home.scss";
 import { useForm } from "react-hook-form";
 
@@ -11,11 +12,16 @@ const Home = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log("Submitted");
+    const idArray = [];
     try {
-        reset();
+      for (let i = 0; i < data.amount; i++) {
+        api.makeFactory().then((result) => {
+          idArray.push(result._id);
+        });
+      }
+      reset();
     } catch (error) {
-        console.log("ERROR: ", error);
+      console.log("ERROR: ", error);
     }
   };
 
@@ -44,7 +50,9 @@ const Home = () => {
                   })}
                 ></input>
                 <div className="buttonWrapper">
-                    <button type="submit" className="button">Generate</button>
+                  <button type="submit" className="button">
+                    Generate
+                  </button>
                 </div>
               </form>
             </span>
