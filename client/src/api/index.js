@@ -2,16 +2,16 @@ import axios from "axios";
 
 const api = {
   getProfiles() {
-    return axios.get("http://localhost:3001/api/profile/");
+    return axios.get("/api/profile/");
   },
   getProfileById(id) {
-    return axios.get("http://localhost:3001/api/profile/" + id);
+    return axios.get("/api/profile/" + id);
   },
   updateProfile(id, profileData) {
-    return axios.put(`http://localhost:3001/api/profile/${id}`, profileData);
+    return axios.put(`/api/profile/${id}`, profileData);
   },
   makeFactory(form) {
-    return axios.post("http://localhost:3001/api/factory", form);
+    return axios.post("/api/factory", form);
   },
 };
 
