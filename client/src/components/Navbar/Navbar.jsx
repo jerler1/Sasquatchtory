@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import ProfileContext from "../../Context/ProfileContext";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import DropdownList from "../DropdownList/DropdownList";
@@ -9,6 +10,7 @@ const Navbar = () => {
   const [activeProfile, setActiveProfile] = useState({});
   // TODO: when a profile is made to add to listOfProfiles.
   const [listOfProfiles, setListOfProfiles] = useState([]);
+  const {profile, setProfile} = useContext(ProfileContext);
   const [isProfileDropdownActive, setIsProfileDropdownActive] = useState(false);
   const [isNewProfileDropdownActive, setIsNewProfileDropdownActive] =
     useState(false);
@@ -30,7 +32,7 @@ const Navbar = () => {
     const choosenProfile = event.target.innerHTML;
     for (let i = 0; i < listOfProfiles.length; i++) {
       if (listOfProfiles[i].name === choosenProfile) {
-        setActiveProfile(listOfProfiles[i]);
+        setProfile(listOfProfiles[i]);
         break;
       }
     }
@@ -56,22 +58,22 @@ const Navbar = () => {
           </div>
         </DropdownMenu>
         <DropdownMenu
-          activeProfile={activeProfile}
+          activeProfile={profile}
           value={isProfileDropdownActive}
           handleDropDownClick={handleProfileDropDownClick}
           buttonDisplay={
             <p>
-              {activeProfile.name
-                ? "Active profile: " + activeProfile.name
+              {profile?.name
+                ? "Active profile: " + profile.name
                 : "Choose Profile"}
             </p>
           }
         >
-          {listOfProfiles.map((profile) => {
+          {listOfProfiles.map((currentProfile) => {
             return (
               <DropdownList
-                profile={profile}
-                key={profile._id}
+                profile={currentProfile}
+                key={currentProfile._id}
                 handleClick={handleDropdownListClick}
               />
             );
