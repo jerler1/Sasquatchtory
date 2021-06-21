@@ -10,6 +10,9 @@ const api = {
   updateProfile(id, profileData) {
     return axios.put(`/api/profile/${id}`, profileData);
   },
+  getFactoryById(id) {
+    return axios.get("/api/factory/" + id);
+  },
   clearFactories(id) {
     return axios.put(`/api/profile/${id}/clear`);
   },
