@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import api from "../../api/index";
 import "./Home.scss";
 import { useForm } from "react-hook-form";
@@ -21,6 +21,7 @@ const Home = () => {
     try {
       for (let i = 0; i < formData.amount; i++) {
         const newFactory = await api.makeFactory();
+        console.log("This is a new factory", newFactory);
         api
           .updateProfile(activeProfileId, {
             id: newFactory.data._id,
@@ -78,13 +79,13 @@ const Home = () => {
       </section>
       <section className="factoriesContainer">
         <div className="factoriesGrid">
-          <Factory />
-          <Factory />
-          <Factory />
-          <Factory />
+          {profile ? (profile.factories.map((factory) => {
+            // const factoryObject = await api.getFactoryById(factory);
+            // console.log("what is this?", factoryObject.data);
+            // <Factory factory={factory} />
+          })) : ""}
         </div>
       </section>
-      <section className="generatedNumbers"></section>
     </div>
   );
 };
