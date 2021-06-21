@@ -39,7 +39,11 @@ const Factory = (props) => {
         </div>
         <hr />
         <div className="factoryGenerated">
-          <NumberDisplay/>
+          <NumberDisplay value={3}/>
+          <NumberDisplay value={5}/>
+          <NumberDisplay value={8}/>
+          <NumberDisplay value={11}/>
+          <NumberDisplay value={31}/>
         </div>
       </div>
     </section>
