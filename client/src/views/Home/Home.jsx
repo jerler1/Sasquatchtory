@@ -79,11 +79,12 @@ const Home = () => {
       </section>
       <section className="factoriesContainer">
         <div className="factoriesGrid">
-          {profile ? (profile.factories.map((factory) => {
-            // const factoryObject = await api.getFactoryById(factory);
-            // console.log("what is this?", factoryObject.data);
-            // <Factory factory={factory} />
-          })) : ""}
+          {/* {profile ? (profile.factories.map((factory) => {
+            const factoryObject = await api.getFactoryById(factory);
+            console.log("what is this?", factoryObject.data);
+            <Factory factory={factory} />
+          })) : ""} */}
+          <Factory />
         </div>
       </section>
     </div>
