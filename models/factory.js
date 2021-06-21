@@ -23,11 +23,11 @@ const factorySchema = new Schema({
         type: Array,
         default: [],
     },
-    // profile: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: Profile,
-    //     required: true,
-    // }
+    profile: {
+        type: Schema.Types.ObjectId,
+        ref: Profile,
+        // required: true,
+    }
 });
 
 const Factory = mongoose.model("Factory", factorySchema);
