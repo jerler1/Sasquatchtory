@@ -1,10 +1,10 @@
 import React from 'react';
 import "./NumberDisplay.scss";
 
-const NumberDisplay = () => {
+const NumberDisplay = ({value}) => {
     return (
         <div className="numberContainer">
-            <h3>3</h3>
+            <h3>{value}</h3>
         </div>
     );
 };
