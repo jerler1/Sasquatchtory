@@ -1,0 +1,9 @@
+@import "../../sass/mixins";
+
+.numberContainer {
+    @include dimensions(30px, 30px);
+    @include flex(row, center, center);
+    margin: 2%;
+    border: 2px black solid;
+    box-shadow: 0 10px 6px -6px #777;
+}
