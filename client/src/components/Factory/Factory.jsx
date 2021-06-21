@@ -2,7 +2,9 @@ import React from "react";
 import "./Factory.scss";
 import NumberDisplay from "../NumberDisplay/NumberDisplay";
 
-const Factory = () => {
+const Factory = (props) => {
+
+    
   return (
     <section className="factoryContainer">
       <div className="factoryWrapper">
@@ -37,23 +39,7 @@ const Factory = () => {
         </div>
         <hr />
         <div className="factoryGenerated">
-          {/* amount of numbers to generate */}
-          {/* generate numbers button */}
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
-          <NumberDisplay></NumberDisplay>
+          <NumberDisplay/>
         </div>
       </div>
     </section>
