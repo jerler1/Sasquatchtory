@@ -6,11 +6,14 @@
   h4 {
     font-family: "Gilroy-Light";
     font-size: 18px;
+    font-weight: 200;
     margin: 10px 0px;
+    color: black;
   }
   h3 {
     font-family: "Gilroy-Bold";
     font-size: larger;
+    color: black;
   }
   hr {
     border: 1px solid #333;
@@ -24,19 +27,14 @@
   .factoryWrapper {
     @include dimensions(90%, auto);
     @include flex(column, center, center);
-    background-color: #fcf0cc;
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
+    border-radius: 25px;
     margin: 2% 2%;
+    background-color: #d56aa0;
     // border: 1px black solid;
   }
   .factoryName {
     @include dimensions(100%, auto);
     @include flex(column, center, center);
-    color: black;
-    background-color: #d56aa0;
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
   }
   .factoryMinMax {
     @include dimensions(100%, auto);
@@ -46,7 +44,24 @@
       @include dimensions(50%, auto);
       @include flex(column, center, center);
       .header {
+          @include flex(column, center, center);
       }
     }
+  }
+  .numberToGenerate {
+      @include dimensions(100%, auto);
+      @include flex(column, center, center);
+  }
+  .factoryButtons {
+      @include dimensions(100%, auto);
+      @include flex(row, center, center);
+      button {
+          margin: 0% 3%;
+      }
+  }
+  .factoryGenerated {
+      @include dimensions(100%, auto);
+      @include flex(row, center, center);
+      flex-wrap: wrap;
   }
 }
